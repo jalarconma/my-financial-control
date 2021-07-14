@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-myfinancialcontrol-dev-163348-authRole",
+      "UnauthRoleArn": "arn:aws:iam::157356677452:role/amplify-myfinancialcontrol-dev-163348-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::157356677452:role/amplify-myfinancialcontrol-dev-163348-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-myfinancialcontrol-dev-163348-deployment",
+      "UnauthRoleName": "amplify-myfinancialcontrol-dev-163348-unauthRole",
+      "StackName": "amplify-myfinancialcontrol-dev-163348",
+      "StackId": "arn:aws:cloudformation:us-east-1:157356677452:stack/amplify-myfinancialcontrol-dev-163348/2df8f530-e4eb-11eb-b749-0edd85921ccb",
+      "AmplifyAppId": "d2tciltc5k89j5"
+    },
+    "categories": {
+      "function": {
+        "myfinancialcontrol8a39f7aeDefineAuthChallenge": {
+          "deploymentBucketName": "amplify-myfinancialcontrol-dev-163348-deployment",
+          "s3Key": "amplify-builds/myfinancialcontrol8a39f7aeDefineAuthChallenge-56583231665837687339-build.zip"
+        },
+        "myfinancialcontrol8a39f7aeCreateAuthChallenge": {
+          "deploymentBucketName": "amplify-myfinancialcontrol-dev-163348-deployment",
+          "s3Key": "amplify-builds/myfinancialcontrol8a39f7aeCreateAuthChallenge-2f5777452f2f3770657a-build.zip"
+        }
+      },
+      "auth": {
+        "myfinancialcontrola63eabf8": {}
+      }
+    }
+  }
+}

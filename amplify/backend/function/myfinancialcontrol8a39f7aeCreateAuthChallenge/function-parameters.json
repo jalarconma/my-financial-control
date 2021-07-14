@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "captcha-create-challenge"
+  ],
+  "parentResource": "myfinancialcontrol8a39f7ae",
+  "functionName": "myfinancialcontrol8a39f7aeCreateAuthChallenge",
+  "resourceName": "myfinancialcontrol8a39f7aeCreateAuthChallenge",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "C:\\Users\\JAAM_\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\CreateAuthChallenge",
+  "triggerTemplate": "CreateAuthChallenge.json.ejs",
+  "triggerEventPath": "CreateAuthChallenge.event.json",
+  "roleName": "myfinancialcontrol8a39f7aeCreateAuthChallenge",
+  "skipEdit": true,
+  "enableCors": false
+}
