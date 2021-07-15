@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "myfinancialcontrola63eabf8_identitypool_a63eabf8",
+    "identityPoolName": "myfinancialcontrolba112315_identitypool_ba112315",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "myfinaa63eabf8",
-    "userPoolName": "myfinancialcontrola63eabf8_userpool_a63eabf8",
+    "resourceNameTruncated": "myfinaba112315",
+    "userPoolName": "myfinancialcontrolba112315_userpool_ba112315",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -20,8 +20,7 @@
     "requiredAttributes": [
         "email",
         "family_name",
-        "name",
-        "phone_number"
+        "name"
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
@@ -31,10 +30,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "myfinaa63eabf8_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "myfinaba112315_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "a63eabf8",
-    "resourceName": "myfinancialcontrola63eabf8",
+    "sharedId": "ba112315",
+    "resourceName": "myfinancialcontrolba112315",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -54,11 +53,12 @@
         "email"
     ],
     "triggers": "{}",
-    "hostedUIDomainName": "myfinancialcontrola63eabf8-a63eabf8",
+    "hostedUIDomainName": "myfinancialcontrolba112315-ba112315",
     "authProvidersUserPool": [
         "Google"
     ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"family_name\":\"family_name\",\"name\":\"name\",\"phone_number\":\"phoneNumbers\",\"username\":\"sub\"}}]",
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"family_name\":\"family_name\",\"name\":\"name\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\",\"https://master.d2tciltc5k89j5.amplifyapp.com/\"],\"LogoutURLs\":[\"http://localhost:3000/signout/\",\"https://master.d2tciltc5k89j5.amplifyapp.com/signout/\"]}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
@@ -67,6 +67,5 @@
     },
     "breakCircularDependency": true,
     "permissions": [],
-    "dependsOn": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://master.d2tciltc5k89j5.amplifyapp.com/\"],\"LogoutURLs\":[\"https://master.d2tciltc5k89j5.amplifyapp.com/signout/\"]}"
+    "dependsOn": []
 }

@@ -15,15 +15,15 @@
       "function": {
         "myfinancialcontrol8a39f7aeDefineAuthChallenge": {
           "deploymentBucketName": "amplify-myfinancialcontrol-dev-163348-deployment",
-          "s3Key": "amplify-builds/myfinancialcontrol8a39f7aeDefineAuthChallenge-56583231665837687339-build.zip"
+          "s3Key": "amplify-builds/myfinancialcontrol8a39f7aeDefineAuthChallenge-7359784c64504730676e-build.zip"
         },
         "myfinancialcontrol8a39f7aeCreateAuthChallenge": {
           "deploymentBucketName": "amplify-myfinancialcontrol-dev-163348-deployment",
-          "s3Key": "amplify-builds/myfinancialcontrol8a39f7aeCreateAuthChallenge-2f5777452f2f3770657a-build.zip"
+          "s3Key": "amplify-builds/myfinancialcontrol8a39f7aeCreateAuthChallenge-664d476c4e6833613862-build.zip"
         }
       },
       "auth": {
-        "myfinancialcontrola63eabf8": {}
+        "myfinancialcontrolba112315": {}
       }
     }
   }

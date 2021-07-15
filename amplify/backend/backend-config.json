@@ -12,7 +12,7 @@
     }
   },
   "auth": {
-    "myfinancialcontrola63eabf8": {
+    "myfinancialcontrolba112315": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

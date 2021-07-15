@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 
-import Amplify, { Auth, Hub } from 'aws-amplify';
+import { Auth, Hub } from 'aws-amplify';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -20,6 +19,8 @@ function App() {
         case 'signIn_failure':
         case 'cognitoHostedUI_failure':
           console.log('Sign in failure', data);
+          break;
+        default:
           break;
       }
     });
