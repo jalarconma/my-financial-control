@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "myfinancialcontrolba112315_identitypool_ba112315",
+    "identityPoolName": "myfinancialcontrol5f1d8e44_identitypool_5f1d8e44",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "myfinaba112315",
-    "userPoolName": "myfinancialcontrolba112315_userpool_ba112315",
+    "resourceNameTruncated": "myfina5f1d8e44",
+    "userPoolName": "myfinancialcontrol5f1d8e44_userpool_5f1d8e44",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -30,10 +30,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "myfinaba112315_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "myfina5f1d8e44_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "ba112315",
-    "resourceName": "myfinancialcontrolba112315",
+    "sharedId": "5f1d8e44",
+    "resourceName": "myfinancialcontrol5f1d8e44",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -53,12 +53,13 @@
         "email"
     ],
     "triggers": "{}",
-    "hostedUIDomainName": "myfinancialcontrolba112315-ba112315",
+    "hostedUIDomainName": "myfinancialcontrol5f1d8e44-5f1d8e44",
     "authProvidersUserPool": [
+        "Facebook",
         "Google"
     ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"family_name\":\"family_name\",\"name\":\"name\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\",\"https://master.d2tciltc5k89j5.amplifyapp.com/\"],\"LogoutURLs\":[\"http://localhost:3000/signout/\",\"https://master.d2tciltc5k89j5.amplifyapp.com/signout/\"]}",
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"family_name\":\"last_name\",\"name\":\"name\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"family_name\":\"family_name\",\"name\":\"name\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\",\"https://develop.d2tciltc5k89j5.amplifyapp.com/\"],\"LogoutURLs\":[\"http://localhost:3000/signout/\",\"https://develop.d2tciltc5k89j5.amplifyapp.com/signout/\"]}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
