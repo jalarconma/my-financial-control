@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
-import { ROUTE_TYPE } from '../../app-routes/route-type';
-import { APP_ROUTES } from "../../app-routes/routes";
+import { ROUTE_TYPE } from '../../../app-routes/route-type';
+import { APP_ROUTES } from "../../../app-routes/routes";
 
 const AuthRoute = (props) => {
   const isAuthUser = useSelector(state => state.user.value ? true : false);

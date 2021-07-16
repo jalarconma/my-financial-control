@@ -1,0 +1,14 @@
+.app {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+
+  .header-container {
+    height: 10%;
+  }
+  
+  .body-container {
+    height: 90%;
+    background-color: gray;
+  }
+}

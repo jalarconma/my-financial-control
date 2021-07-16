@@ -1,7 +1,7 @@
-import './App.css';
+import styles from './App.module.scss';
 
 import { Auth, Hub } from 'aws-amplify';
-import { Fragment, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from './store/user-slice';
 import { Route, Switch } from 'react-router-dom';
@@ -14,11 +14,11 @@ import HomePage from './pages/home/HomePage';
 import MyAccountPage from './pages/my-account/MyAccountPage';
 import SignupPage from './pages/signup/SignupPage';
 
-import NavBar from './components/nav-bar/NavBar';
-import AuthRoute from './components/auth-route/AuthRoute';
+import NavBar from './components/cross-components/nav-bar/NavBar';
+import AuthRoute from './components/cross-components/auth-route/AuthRoute';
 
 function App() {
-  const user = useSelector(state => state.user.value);
+  //const user = useSelector(state => state.user.value);
   const dispatch = useDispatch();
 
   const setUserHandler = (userData) => {
@@ -55,9 +55,11 @@ function App() {
   }
 
   return (
-    <Fragment>
-      <NavBar />
-      <main>
+    <div className={styles.app}>
+      <div className={styles['header-container']}>
+        <NavBar />
+      </div>
+      <div className={styles['body-container']}>
         <Switch>
           <Route path="/" exact>
             <WelcomePage />
@@ -76,8 +78,8 @@ function App() {
             <MyAccountPage />
           </AuthRoute>
         </Switch>
-      </main>
-    </Fragment>
+      </div>
+    </div>
     // <div>
     //   <p>User: {user ? JSON.stringify(user.attributes) : 'None'}</p>
     //   {user && <button onClick={() => Auth.signOut()}>Sign Out</button>}
