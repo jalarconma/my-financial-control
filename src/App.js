@@ -57,24 +57,26 @@ function App() {
   return (
     <Fragment>
       <NavBar />
-      <Switch>
-        <Route path="/" exact>
-          <WelcomePage />
-        </Route>
-        <AuthRoute path={APP_ROUTES.SIGNIN} type={ROUTE_TYPE.PUBLIC}>
-          <SigninPage />
-        </AuthRoute>
-        <AuthRoute path={APP_ROUTES.SIGNUP} type={ROUTE_TYPE.PUBLIC}>
-          <SignupPage />
-        </AuthRoute>
-        <AuthRoute path={APP_ROUTES.SIGNOUT} type={ROUTE_TYPE.PRIVATE} />
-        <AuthRoute path={APP_ROUTES.HOME} type={ROUTE_TYPE.PRIVATE}>
-          <HomePage />
-        </AuthRoute>
-        <AuthRoute path={APP_ROUTES.MY_ACCOUNT} type={ROUTE_TYPE.PRIVATE}>
-          <MyAccountPage />
-        </AuthRoute>
-      </Switch>
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <WelcomePage />
+          </Route>
+          <AuthRoute path={APP_ROUTES.SIGNIN} type={ROUTE_TYPE.PUBLIC}>
+            <SigninPage />
+          </AuthRoute>
+          <AuthRoute path={APP_ROUTES.SIGNUP} type={ROUTE_TYPE.PUBLIC}>
+            <SignupPage />
+          </AuthRoute>
+          <AuthRoute path={APP_ROUTES.SIGNOUT} type={ROUTE_TYPE.PRIVATE} />
+          <AuthRoute path={APP_ROUTES.HOME} type={ROUTE_TYPE.PRIVATE}>
+            <HomePage />
+          </AuthRoute>
+          <AuthRoute path={APP_ROUTES.MY_ACCOUNT} type={ROUTE_TYPE.PRIVATE}>
+            <MyAccountPage />
+          </AuthRoute>
+        </Switch>
+      </main>
     </Fragment>
     // <div>
     //   <p>User: {user ? JSON.stringify(user.attributes) : 'None'}</p>

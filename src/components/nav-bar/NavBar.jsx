@@ -1,10 +1,12 @@
+import Navigation from '../navigation/Navigation';
 import styles from './NavBar.module.scss';
 
 const NavBar = () => {
   return (
-    <div>
-      <h1>NAVIGATION BAR HERE</h1>
-    </div>
+    <header className={styles.header}>
+      <h1>My Financial Control</h1>
+      <Navigation />
+    </header>
   );
 }
 
