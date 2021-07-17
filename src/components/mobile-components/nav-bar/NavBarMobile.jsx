@@ -1,7 +1,6 @@
 import { Fragment, useState } from 'react';
 
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { IoMdClose } from 'react-icons/io';
 import NavigationListMobile from '../navigation-list/NavigationListMobile';
 
 import styles from './NavBarMobile.module.scss';

@@ -4,8 +4,13 @@
   left: 0;
   background-color: #741188;
   height: 100%;
-  width: 100%;
+  width: 0;
   z-index: 1;
+  transition: width 0.5s ease-out;
+
+  &.open {
+    width: 100%;
+  }
 
   .nav-list__close {
     padding-top: 2rem;
