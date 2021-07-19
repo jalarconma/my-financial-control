@@ -1,8 +1,8 @@
 import styles from './App.module.scss';
 
-import { Auth, Hub } from 'aws-amplify';
+import { API, Auth, Hub } from 'aws-amplify';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { userActions } from './store/user-slice';
 import { Route, Switch } from 'react-router-dom';
 import { APP_ROUTES } from './app-routes/routes';
@@ -17,12 +17,52 @@ import SignupPage from './pages/signup/SignupPage';
 import NavBar from './components/cross-components/nav-bar/NavBar';
 import AuthRoute from './components/cross-components/auth-route/AuthRoute';
 
+import * as queries from './graphql/queries';
+import * as mutations from './graphql/mutations';
+
 function App() {
-  //const user = useSelector(state => state.user.value);
   const dispatch = useDispatch();
 
   const setUserHandler = (userData) => {
-    dispatch(userActions.setUser(userData));
+    let userInfo = null;
+
+    if (userData) {
+      userInfo = {
+        ...userData.attributes,
+      }
+    }
+
+    storeUser(userInfo);
+  }
+
+  async function storeUser(userInfo) {
+    try {
+      let userData = null;
+      if (userInfo) {
+        console.log('user info: ', userInfo);
+        const prevUserResponse = await API.graphql({ query: queries.listUsers, variables: { email: userInfo.email }});
+        const [ prevUser ] = prevUserResponse.data.listUsers.items;
+  
+        if(!prevUser) {
+          const toCreateUser = {
+            email: userInfo.email,
+            firstName: userInfo.name.split(" ")[0],
+            lastName: userInfo.family_name
+          };
+
+          userData = await API.graphql({ query: mutations.createUser, variables: {input: toCreateUser}});
+          console.log('created user: ', userData);
+        } else {
+          userData = prevUser;
+          console.log('prev user: ', userData);
+        }
+  
+      }
+
+      dispatch(userActions.setUser(userData));
+    } catch(e) {
+      console.log('store error: ', e);
+    }
   }
 
   useEffect(() => {
@@ -80,11 +120,6 @@ function App() {
         </Switch>
       </div>
     </div>
-    // <div>
-    //   <p>User: {user ? JSON.stringify(user.attributes) : 'None'}</p>
-    //   {user && <button onClick={() => Auth.signOut()}>Sign Out</button>}
-    //   {!user && <button onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Federated Sign In</button>}
-    // </div>
   );
 }
 

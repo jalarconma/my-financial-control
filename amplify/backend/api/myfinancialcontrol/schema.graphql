@@ -1,0 +1,22 @@
+enum FlowType {
+  INCOME
+  EXPENSE
+}
+
+type CashFlow @model @key(name: "byUser", fields: ["userID"]) @auth(rules: [{allow: public}, {allow: private}]) {
+  id: ID!
+  description: String!
+  value: Float!
+  type: FlowType!
+  date: String!
+  userID: ID
+}
+
+type User @model @auth(rules: [{allow: public}, {allow: private}]) {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  CashFlows: [CashFlow] @connection(keyName: "byUser", fields: ["id"])
+}
+ 

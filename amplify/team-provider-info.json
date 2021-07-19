@@ -20,6 +20,10 @@
         "myfinancialcontrol8a39f7aeCreateAuthChallenge": {
           "deploymentBucketName": "amplify-myfinancialcontrol-dev-163348-deployment",
           "s3Key": "amplify-builds/myfinancialcontrol8a39f7aeCreateAuthChallenge-664d476c4e6833613862-build.zip"
+        },
+        "usersLambda": {
+          "deploymentBucketName": "amplify-myfinancialcontrol-dev-163348-deployment",
+          "s3Key": "amplify-builds/usersLambda-516834464c7669737239-build.zip"
         }
       },
       "auth": {
