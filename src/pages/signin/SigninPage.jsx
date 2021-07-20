@@ -1,27 +1,17 @@
 import styles from './SigninPage.module.scss';
 
-import { Auth } from 'aws-amplify';
-
 import SignInFormMobile from '../../components/mobile-components/sign-in-form/SignInFormMobile';
 import Card from '../../components/cross-components/card/Card';
 import Mobile from '../../hocs/mobile/Mobile';
+import { signIn } from '../../services/user-service';
 
 const SigninPage = () => {
-  const signinHandler = (userData) => {
-    console.log('sign in data ', userData);
-    signIn(userData);
-  }
 
-  async function signIn(userData) {
+  const signinHandler = async (userData) => {
     try {
-      const { email, password} = userData;
-      const { user } = await Auth.signIn({
-        username: email,
-        password
-      });
-      console.log(user);
-    } catch (error) {
-      console.log('error signing up:', error);
+      await signIn(userData);
+    } catch(error) {
+      console.log('error signing in:', error);
     }
   }
 

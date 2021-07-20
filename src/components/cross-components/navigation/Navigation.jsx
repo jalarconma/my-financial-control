@@ -10,7 +10,7 @@ const Navigation = () => {
 
   const menuOptions = links.map(link => {
     return (
-      <li>
+      <li key={link.route}>
         <NavLink activeClassName={styles.active} to={link.route}>{link.title}</NavLink>
       </li>
     )

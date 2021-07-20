@@ -46,7 +46,7 @@ const validate = ({name, value}) => {
     return validateEmail(value);
   }
 
-  if(name == 'password') {
+  if(name === 'password') {
     return validatePassword(value);
   }
 

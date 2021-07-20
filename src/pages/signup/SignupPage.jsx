@@ -1,32 +1,16 @@
 import styles from './SignupPage.module.scss';
 
-import { Auth, Hub } from 'aws-amplify';
 import Desktop from '../../hocs/desktop/Desktop';
 import Mobile from '../../hocs/mobile/Mobile';
 import SignUpFormMobile from '../../components/mobile-components/sign-up-form/SignupFormMobile';
 import Card from '../../components/cross-components/card/Card';
+import { signUp } from '../../services/user-service';
 
 const SignupPage = () => {
 
-  const signupHandler = (userData) => {
-    /**/
-    console.log('sign up data ', userData);
-    signUp(userData);
-  }
-
-  async function signUp(userData) {
+  const signupHandler = async (userData) => {
     try {
-      const { email, password, firstName, lastName } = userData;
-      const { user } = await Auth.signUp({
-        username: email,
-        password,
-        attributes: {
-          name: `${firstName} ${lastName}`,
-          email,
-          family_name: lastName
-        }
-      });
-      console.log(user);
+      await signUp(userData);
     } catch (error) {
       console.log('error signing up:', error);
     }
