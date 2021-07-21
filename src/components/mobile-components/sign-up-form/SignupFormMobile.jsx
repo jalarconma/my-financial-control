@@ -1,4 +1,5 @@
 import useForm from '../../../hooks/use-form';
+import Button from '../../cross-components/button/Button';
 import styles from './SignupFormMobile.module.scss';
 
 const SignUpFormMobile = ({onSignUp}) => {
@@ -40,7 +41,7 @@ const SignUpFormMobile = ({onSignUp}) => {
         </div>
       </div>
       <div className={styles['form-actions']}>
-        <button type='submit' disabled={!formState.isValid}>Submit</button>
+        <Button type='submit' disabled={!formState.isValid}>Submit</Button>
       </div>
     </form>
   );

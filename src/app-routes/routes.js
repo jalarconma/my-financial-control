@@ -5,11 +5,11 @@ export const APP_ROUTES = {
   SIGNOUT: '/signout',
   HOME: '/home',
   MY_ACCOUNT: '/my-account',
-  EXPENSES: '/expenses'
+  CASH_FLOW: '/cash-flow'
 }
 
 export const AUTH_NAV_LINKS = [
-  { route: APP_ROUTES.EXPENSES, title: 'Expenses'},
+  { route: APP_ROUTES.CASH_FLOW, title: 'Cash Flow'},
   { route: APP_ROUTES.SIGNOUT, title: 'Sign Out'}
 ];
 

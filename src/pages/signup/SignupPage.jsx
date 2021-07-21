@@ -5,6 +5,7 @@ import Mobile from '../../hocs/mobile/Mobile';
 import SignUpFormMobile from '../../components/mobile-components/sign-up-form/SignupFormMobile';
 import Card from '../../components/cross-components/card/Card';
 import { signUp } from '../../services/user-service';
+import SignUpFormDesktop from '../../components/desktop-components/sign-up-form/SignUpFormDesktop';
 
 const SignupPage = () => {
 
@@ -18,7 +19,7 @@ const SignupPage = () => {
 
   return (
     <Card>
-      {/* <Desktop><SignUpFormDesktop /></Desktop> */}
+      <Desktop><SignUpFormDesktop onSignUp={signupHandler}/></Desktop>
       <Mobile><SignUpFormMobile onSignUp={signupHandler} /></Mobile>
       {/* <div>
       <p>User: {user ? JSON.stringify(user.attributes) : 'None'}</p>

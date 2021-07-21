@@ -1,11 +1,12 @@
 .control-group {
-  display: flex;
-  flex-flow: column;
+  display: grid;
   align-items: center;
   justify-content: center;
+  grid-template-columns: auto auto;
+  column-gap: 2rem;
+  row-gap: 1rem;
 
   .form-control {
-    margin-bottom: 1rem;
     display: flex;
     flex-flow: column;
 
@@ -47,6 +48,7 @@
 }
 
 .form-actions {
+  margin-top: 2rem;
   display: flex;
   justify-content: flex-end;
 }

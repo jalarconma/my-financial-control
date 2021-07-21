@@ -14,6 +14,7 @@ import NavBar from './components/cross-components/nav-bar/NavBar';
 import AuthRoute from './components/cross-components/auth-route/AuthRoute';
 
 import useUser from './hooks/use-user';
+import CashFlowPage from './pages/cash-flow/CashFlowPage';
 
 function App() {
   useUser();
@@ -40,6 +41,9 @@ function App() {
           </AuthRoute>
           <AuthRoute path={APP_ROUTES.MY_ACCOUNT} type={ROUTE_TYPE.PRIVATE}>
             <MyAccountPage />
+          </AuthRoute>
+          <AuthRoute path={APP_ROUTES.CASH_FLOW} type={ROUTE_TYPE.PRIVATE}>
+            <CashFlowPage />
           </AuthRoute>
         </Switch>
       </div>

@@ -1,8 +1,8 @@
 import useForm from '../../../hooks/use-form';
 import Button from '../../cross-components/button/Button';
-import styles from './SignInFormMobile.module.scss';
+import styles from './SignInFormDesktop.module.scss';
 
-const SignInFormMobile = ({onSignIn}) => {
+const SignInFormDesktop = ({onSignIn}) => {
   const {
     formState,
     inputChangeHandler,
@@ -13,6 +13,7 @@ const SignInFormMobile = ({onSignIn}) => {
 
   const showEmailError = !inputs.email.isValid && inputs.email.touched;
   const showPasswordError = !inputs.password.isValid && inputs.password.touched;
+
   return (
     <form onSubmit={submitHandler}>
       <div className={styles['control-group']}>
@@ -34,4 +35,4 @@ const SignInFormMobile = ({onSignIn}) => {
   );
 }
 
-export default SignInFormMobile;
+export default SignInFormDesktop;
