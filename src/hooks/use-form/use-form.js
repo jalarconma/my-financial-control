@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import validate, { validateInputs, validateInputsTouched } from "../components/utils/signup-validations";
+import { validateInputs, validateInputsTouched, getInitialInputs } from './use-form-utils';
 
 const FORM_ACTION_TYPES = {
   INPUT_CHANGE: 'INPUT_CHANGE',
@@ -9,11 +9,12 @@ const FORM_ACTION_TYPES = {
 const INITIAL_FORM_STATE = {
   inputs: {},
   isValid: false,
-  touched: false
+  touched: false,
+  validateFn: ({name, value}) => {}
 }
 
-const getModifiedForm = (prevState, {name, value}, touched) => {
-  const inputErrors = validate({name, value});
+const getModifiedForm = (prevState, {name, value, required}, touched) => {
+  const inputErrors = required ? prevState.validateFn({name, value}) : '';
   const inputTouched = touched ? true : prevState.inputs[name].touched;
 
   const inputs = {
@@ -30,6 +31,7 @@ const getModifiedForm = (prevState, {name, value}, touched) => {
   const isFormValid = validateInputs(inputs);
 
   return {
+    ...prevState,
     inputs: inputs,
     isValid: isFormValid,
     touched: formTouched
@@ -47,26 +49,11 @@ const formReducer = (prevState, {type, value}) => {
   }
 }
 
-const getInitialInputs = (inputs) => {
-  const structuredInputs = {};
-  Object.keys(inputs).forEach(key => {
-    const inputErrors = validate({name: key, value: inputs[key]});
-
-    structuredInputs[key] = {
-      value: inputs[key],
-      errors: inputErrors,
-      isValid: inputErrors.length === 0,
-      touched: false
-    };
-  });
-
-  return structuredInputs;
-};
-
-const useForm = (inputValues, onSubmit) => {
+const useForm = (inputValues, onSubmit, validateFn) => {
   const [formState, dispatchInputChange] = useReducer(formReducer, {
     ...INITIAL_FORM_STATE,
-    inputs: getInitialInputs(inputValues),
+    inputs: getInitialInputs(inputValues, validateFn),
+    validateFn
   });
 
   const inputChangeHandler = (event) => {

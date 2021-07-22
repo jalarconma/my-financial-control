@@ -1,0 +1,53 @@
+.control-group {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  .form-control {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: column;
+
+    &.invalid input {
+      border: 1px solid #b40e0e;
+      background-color: #fddddd;
+    }
+
+    &.invalid input:focus {
+      border-color: #ff8800;
+      background-color: #fbe8d2;
+    }
+
+    .error-text {
+      color: #b40e0e;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    input,
+    select {
+      font: inherit;
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      width: 20rem;
+      max-width: 100%;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #240370;
+      background-color: #e0d4fd;
+    }
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-between;
+}

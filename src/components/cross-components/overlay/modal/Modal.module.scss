@@ -1,0 +1,8 @@
+.modal {
+  width: 60%;
+  min-height: 30%;
+
+  &.mobile {
+    width: 90%;
+  }
+}
